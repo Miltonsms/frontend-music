@@ -39,8 +39,42 @@ playcounts.push(parsed_json["tracks"]["track"][i]["playcount"])
 urls.push(parsed_json["tracks"]["track"][i]["artist"]["url"])
 try {image.push(parsed_json["tracks"]["track"][i]["image"][2]["#text"])}
 catch(err){image.push("images/cabio.jpg")}
-$(".span6").append("<tr>" + "<td>" + (i+1) + "</td>" + "<td >" +lis[i] + "</td>"  + "<td>" + artist[i] + "</td>" + "<td>" + playcounts[i] + "</td>" + "<td>" + (duration[i]/60).toFixed(2) + "</td>" + "<td>" + "<img src=\""+image[i]+"\"  width= 100px>" + "</td>" +"</tr>"+"<br>"
- );
+$(".milton").append(
+"<div class = 'row'>"+
+	"<div class ='span12'>"+
+	"<div class = 'row'>"+
+	"<div class ='span2'>"+
+		(i+1)+
+		"</div>"+
+		"<div class = 'row'>"+
+		"<div class ='span2'>"+
+			lis[i]+
+			"</div>"+
+			"<div class = 'row'>"+
+			"<div class ='span2'>"+
+				artist[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				playcounts[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				(duration[i]/60).toFixed(2)+
+				"</div>"+
+				"<div class = 'row'>"+
+			"<div class ='span2'>"	+
+			"<img src=\""+image[i]+"\" width= 100px>"+
+			"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"
+	);
 };
 }
 });
@@ -74,16 +108,39 @@ b = b/60
 if (a<b) {return 1}else{return 0};
 };
 $(".top").click(function(){
-$(".span6").empty();
+$(".milton").empty();
 OrderList.sort(az);
 for (var i = 0; i <50; i++) {
 $(".milton").append(
 "<div class = 'row'>"+
 	"<div class ='span12'>"+
-	"<div class ='span3'>"+
-		"<div class ='span6'>"+
-"<tr>" + "<td>" + (i+1) + "</td>" + "<td >" +lis[i] + "</td>"  + "<td>" + artist[i] + "</td>" + "<td>" + playcounts[i] + "</td>" + "<td>" + (duration[i]/60).toFixed(2) + "</td>" + "<td>" + "<img src=\""+image[i]+"\"  width= 100px>" + "</td>" +"</tr>"+
-			"<div class ='span3'>"	+
+	"<div class = 'row'>"+
+	"<div class ='span2'>"+
+		(i+1)+
+		"</div>"+
+		"<div class = 'row'>"+
+		"<div class ='span2'>"+
+			lis[i]+
+			"</div>"+
+			"<div class = 'row'>"+
+			"<div class ='span2'>"+
+				artist[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				playcounts[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				(duration[i]/60).toFixed(2)+
+				"</div>"+
+				"<div class = 'row'>"+
+			"<div class ='span2'>"	+
+			"<img src=\""+image[i]+"\" width= 100px>"+
+			"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
 		"</div>"+
 		"</div>"+
 		"</div>"+
@@ -93,46 +150,185 @@ $(".milton").append(
 };
 });
 $(".az").click(function(){
-$(".span6").empty();
+$(".milton").empty();
 OrderList.sort(az);
 for (var x = 0; x <50; x++) {
 for (var i = 0; i <50; i++) {
 if (OrderList[x] === lis[i]) {
-$(".span6").append("<tr>" + "<td>" + (i+1) + "</td>" + "<td >" +lis[i] + "</td>"  + "<td>" + artist[i] + "</td>" + "<td>" + playcounts[i] + "</td>" + "<td>" + (duration[i]/60).toFixed(2) + "</td>" + "<td>" + "<img src=\""+image[i]+"\" width= 100px>" + "</td>" +"</tr>");
+$(".milton").append(
+"<div class = 'row'>"+
+	"<div class ='span12'>"+
+	"<div class = 'row'>"+
+	"<div class ='span2'>"+
+		(i+1)+
+		"</div>"+
+		"<div class = 'row'>"+
+		"<div class ='span2'>"+
+			lis[i]+
+			"</div>"+
+			"<div class = 'row'>"+
+			"<div class ='span2'>"+
+				artist[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				playcounts[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				(duration[i]/60).toFixed(2)+
+				"</div>"+
+				"<div class = 'row'>"+
+			"<div class ='span2'>"	+
+			"<img src=\""+image[i]+"\" width= 100px>"+
+			"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"
+	);
 };
 };
 };
 });
 $(".za").click(function(){
-$(".span6").empty();
+$(".milton").empty()
 OrderList.sort(za);
 for (var x = 0; x <50; x++) {
 for (var i = 0; i <50; i++) {
 if (OrderList[x] === lis[i]) {
-var play = "http://img268.imageshack.us/img268/4378/buttonplayc.png"
-$(".span6").append("<tr>" + "<td>" + (i+1) + "</td>" + "<td >" +lis[i] + "</td>"  + "<td>" + artist[i] + "</td>" + "<td>" + playcounts[i] + "</td>" + "<td>" + (duration[i]/60).toFixed(2) + "</td>" + "<td>" + "<img src=\""+image[i]+"\"  width= 100px>" + "</td>" +"</tr>");
+var play = "http://img268.imageshack.us/img268/4378/buttonplayc.png";
+$(".milton").append(
+"<div class = 'row'>"+
+	"<div class = 'row'>"+
+	"<div class ='span2'>"+
+		(i+1)+
+		"</div>"+
+		"<div class = 'row'>"+
+		"<div class ='span2'>"+
+			lis[i]+
+			"</div>"+
+			"<div class = 'row'>"+
+			"<div class ='span2'>"+
+				artist[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				playcounts[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				(duration[i]/60).toFixed(2)+
+				"</div>"+
+				"<div class = 'row'>"+
+			"<div class ='span2'>"	+
+			"<img src=\""+image[i]+"\" width= 100px>"+
+			"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"
+	);
 };
 };
 };
 });
 $(".duration").click(function(){
-$(".span6").empty();
+$(".milton").empty();
 OrderDuration.sort(order);
 for (var x = 0; x <50; x++) {
 for (var i = 0; i <50; i++) {
 if (OrderDuration[x] === duration[i]) {
-$(".span6").append("<tr>" + "<td>" + (i+1 ) + "</td>" + "<td >" +lis[i] + "</td>"  + "<td>" + artist[i] + "</td>" + "<td>" + playcounts[i] + "</td>" + "<td>" + (duration[i]/60).toFixed(2) + "</td>" + "<td>" + "<img src=\""+image[i]+"\" width= 100px>" + "</td>" +"</tr>");
+$(".milton").append(
+"<div class = 'row'>"+
+	"<div class ='span12'>"+
+	"<div class = 'row'>"+
+	"<div class ='span2'>"+
+		(i+1)+
+		"</div>"+
+		"<div class = 'row'>"+
+		"<div class ='span2'>"+
+			lis[i]+
+			"</div>"+
+			"<div class = 'row'>"+
+			"<div class ='span2'>"+
+				artist[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				playcounts[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				(duration[i]/60).toFixed(2)+
+				"</div>"+
+				"<div class = 'row'>"+
+			"<div class ='span2'>"	+
+			"<img src=\""+image[i]+"\" width= 100px>"+
+			"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"
+	);
 };
 };
 };
 });
 $(".playcounts").click(function(){
-$(".span6").empty();
+$(".milton").empty();
 OrderPlayCount.sort(order);
 for (var x = 0; x <50; x++) {
 for (var i = 0; i <50; i++) {
 if (OrderPlayCount[x] === playcounts[i]) {
-$(".span6").append("<tr>" + "<td>" + (i+1) + "</td>" + "<td >" +lis[i] + "</td>"  + "<td>" + artist[i] + "</td>" + "<td>" + playcounts[i] + "</td>" + "<td>" + (duration[i]/60).toFixed(2) + "</td>" + "<td>" + "<img src=\""+image[i]+"\"  width= 100px>" + "</td>" +"</tr>");
+
+$(".milton").append(
+"<div class = 'row'>"+
+	"<div class ='span12'>"+
+	"<div class = 'row'>"+
+	"<div class ='span2'>"+
+		(i+1)+
+		"</div>"+
+		"<div class = 'row'>"+
+		"<div class ='span2'>"+
+			lis[i]+
+			"</div>"+
+			"<div class = 'row'>"+
+			"<div class ='span2'>"+
+				artist[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				playcounts[i]+
+				"</div>"+
+				"<div class = 'row'>"+
+				"<div class ='span2'>"+
+				(duration[i]/60).toFixed(2)+
+				"</div>"+
+				"<div class = 'row'>"+
+			"<div class ='span2'>"	+
+			"<img src=\""+image[i]+"\" width= 100px>"+
+			"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"+
+		"</div>"
+	);
 };
 };
 };
